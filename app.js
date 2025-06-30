@@ -89,3 +89,38 @@ function renderizarHistorial() {
         lista.appendChild(item);
     });
 }
+
+async function mostrarPrimeros20Pokemones() {
+    try {
+        const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
+        const data = await respuesta.json();
+        const pokemones = data.results;
+
+        const contenedor = document.querySelector('#pokemonInfo');
+        contenedor.innerHTML = ''; // Limpiar contenido anterior
+
+        // Recorrer y buscar detalles de cada pokemon
+        for (const p of pokemones) {
+            const res = await fetch(p.url);
+            const detalle = await res.json();
+
+            const card = document.createElement('div');
+            card.className = 'card text-center bg-light m-2';
+            card.style.width = '14rem';
+            card.innerHTML = `
+                <img src="${detalle.sprites.front_default}" class="card-img-top" alt="${detalle.name}">
+                <div class="card-body">
+                    <h5 class="card-title text-capitalize">${detalle.name}</h5>
+                    <p class="card-text">Tipo: ${detalle.types[0].type.name}</p>
+                    <p class="card-text">Exp: ${detalle.base_experience}</p>
+                </div>
+            `;
+            contenedor.appendChild(card);
+        }
+
+    } catch (error) {
+        console.error('Error al cargar los 20 pokemones:', error);
+        alert('No se pudieron cargar los pokemones iniciales.');
+    }
+}
+
