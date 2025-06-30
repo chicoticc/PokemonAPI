@@ -92,7 +92,7 @@ function renderizarHistorial() {
 
 async function mostrarPrimeros20Pokemones() {
     try {
-        const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1521&offset=0');
+        const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon?limit=10&offset=0');//1521
         const data = await respuesta.json();
         const pokemones = data.results;
 

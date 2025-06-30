@@ -11,10 +11,20 @@ margin: 0;
   background-position: 0 0, 40px 40px, 80px 0px, 120px 40px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+header a{
+    background-color: rgba(232, 163, 25, 0.952);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 10px;
+}
 main{
     height: 70vh;
     width: 100vw;
-    padding: 5%;
+    padding: 5%;   
+}
+main h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgba(232, 163, 25, 0.952);
+    border-radius: 10px;
 }
 #pokemonInfo{
     display: flex;
