@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemones Sionistas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand">Pokemones</a>
+                
+                <input id="input" class="form-control me-2" type="text" placeholder="Buscar Pokemon por ID o Nombre" aria-label="Search"/>
+                <button id="buscarPokemon" class="btn btn-outline-success">Search</button>
+                
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1 class="text-center">Pokemones Sionistas</h1>
+        <br>
+        <div id="pokemonInfo"></div>
+        <div id="botones" style="display: flex; justify-content: space-evenly;">
+            <div id="btn1">
+                <button id="anterior">Anterior</button>
+            </div>
+            <div id="btn2">
+                <button id="siguiente">Siguiente</button>
+            </div>
+        </div>
+
+        <div id="historial" class="mt-4">
+            <h3>Últimos 5 Pokémon buscados:</h3>
+            <ul id="listaHistorial" class="list-group"></ul>
+        </div>
+    </main>
+    <footer></footer>
+
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
