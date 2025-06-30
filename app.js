@@ -86,6 +86,8 @@ function renderizarHistorial() {
         const item = document.createElement('li');
         item.textContent = nombre;
         item.classList.add('list-group-item', 'text-capitalize');
+        item.style.cursor = 'pointer';
+        item.onclick = () => obtenerPokemones(nombre);
         lista.appendChild(item);
     });
 }
