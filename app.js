@@ -92,7 +92,7 @@ function renderizarHistorial() {
 
 async function mostrarPrimeros20Pokemones() {
     try {
-        const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
+        const respuesta = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1521&offset=0');
         const data = await respuesta.json();
         const pokemones = data.results;
 
@@ -105,7 +105,7 @@ async function mostrarPrimeros20Pokemones() {
             const detalle = await res.json();
 
             const card = document.createElement('div');
-            card.className = 'card text-center bg-light m-2';
+            card.className = 'card text-center bg-warning m-2';
             card.style.width = '14rem';
             card.innerHTML = `
                 <img src="${detalle.sprites.front_default}" class="card-img-top" alt="${detalle.name}">
